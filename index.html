@@ -1,0 +1,61 @@
+<head>
+    <style type="text/css">
+    h1 {text-align:center}
+    body {color:green}
+    body {background-color:orange}
+    body {text-align:center}
+    body {font-size:32}
+    #pal{
+        visibility: hidden;
+    }
+    </style>
+    <body>
+    <h1>SIMPLE INTEREST CALCULATOR</h1>
+    <label for="principal" >principal:</label>
+    <input type="number" id="principal" class="c" value=""><br><br>
+    <label for="rate" >rate:</label>
+    <input type="number" id="rate" class="c" value=""><br><br>
+    <label for="time" >time:</label>
+    <input type="number" id="time" class="c" value=""><br><br>
+    <p id="result" name="result">
+    </p>
+    <button onclick=run() id="cal" >calculate</button><br><br>
+    <button onclick=res()  id="pal"   >reset</button><br><br>
+    <script>
+        function run(){
+            let principal=document.getElementById("principal").value;
+            let rate=document.getElementById("rate").value;
+            let time=document.getElementById("time").value;
+            // let result=document.getElementById("p").value;
+            if(principal=="" || rate == "" || time ==""){
+                alert("enter the inputs first");
+            }
+            else{
+
+                let value=principal*(1+rate*time);
+                document.getElementById("result").innerText=value;
+                document.getElementById("cal").style.visibility='hidden';
+                document.getElementById("pal").style.visibility='visible';
+                console.log(value);
+            }
+        }
+        function res()
+        {
+            let q="enter inputs";
+          // document.getElementById("principal").value=0
+          // document.getElementById("rate").value=0 
+          // document.getElementById("time").value=0
+          let classid= document.getElementsByClassName("c");
+          for(let i=0;i<=2;i++){
+           classid[i].value="";
+          }
+           document.getElementById("result").innerText=q;
+           document.getElementById("result").innerText=q;
+           console.log(q);
+        }
+    </script>
+    </body>
+    </html>
+    
+    
+    
